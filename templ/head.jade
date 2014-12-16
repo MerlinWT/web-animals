@@ -1,0 +1,56 @@
+- var mainName="Задний дворик"
+- var mainMenu={index: ["Главная", "home"], request: ["Оставить заявку", "edit"], hotel: ["Гостинница", "tags"], diary: ["Дневник", "calendar"]}
+- var rightMenu={auth: ["Войти", "user"]}
+mixin authForm
+    #authForm.modal.hide.fade
+        .modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+            h3 Авторизация
+        .modal-body
+            form.form-horizontal
+                .control-group
+                    label(for="authLogin").control-label Логин
+                    .controls
+                        input#authLogin(type="text")
+                .control-group
+                    label(for="authPass").control-label Пароль
+                    .controls
+                        input#authLogin(type="password")
+        .modal-footer
+            a(href="#").btn.close Закрыть
+            a(href="#").btn.btn-primary Войти
+
+doctype html
+html
+    head
+        title Портал приюта "#{mainName}"
+        meta(charset="utf-8")
+        link(rel="stylesheet", href="./bootstrap/css/bootstrap.css")
+        script(src="./jquery-1.11.1.js")
+        script(src="./bootstrap/js/bootstrap.js")
+    body
+        +authForm
+        .navbar.navbar-fixed-top
+            .navbar-inner
+                .container
+                    a(href="index.html").brand
+                        i(class="icon-#{mainMenu.index[1]}")
+                        span  #{mainMenu.index[0]}
+                    ul.nav
+                        each item, index in mainMenu
+                            if index != 'index'
+                                li
+                                    a(href="#{index}.html")
+                                        i(class="icon-#{item[1]}")
+                                        span  #{item[0]}
+                    ul.nav.pull-right
+                        li
+                            a(href="#authForm", data-toggle="modal")
+                                i(class="icon-#{rightMenu.auth[1]}")
+                                span  #{rightMenu.auth[0]}
+        //<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+        .hero-unit
+            .container
+                .row
+                    h1.span6  #{mainName}
+block Content
