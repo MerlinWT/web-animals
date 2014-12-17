@@ -1,6 +1,24 @@
 extends ../templ/head
 block Content
+    - var pets=[{name: "Spike", type: "dog", info: "Милашка"},{name: "Spiker", type: "dog", info: "Озарник"},{name: "Speeke", type: "dog", info: "Попрыгун"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"}]
     .container
-      .row
-        h2 Информация о питомцах приюта
-
+        .row
+            form.form-search.text-center
+                input(type="text").search-query.input-xxlarge
+                button(type="submit").btn Найти друга
+            div.alert
+                button(type="button", data-dismiss="alert").close &times;
+                strong Warning!
+                span  Best check yo self, you're not looking too good.
+        .row
+            ul.thumbnails
+                each pet, index in pets
+                    li.span4
+                        div.thumbnail
+                            img(src="img/index.png")
+                            .row-fluid
+                                h3.span6 #{pet.name}
+                                    small  #{pet.type}
+                                h3.span6
+                                    button(type="button").btn.btn-primary.span12 Взять друга
+                            p #{pet.info}
