@@ -1,5 +1,27 @@
 extends ../templ/head
 block Content
+    - var form=[{id: "address", label: "Адрес бездомного животного"}, {id: "health", label: "Состояние животного"}, {id: "date", label: "Дата, когда было замечено"}, {id: "animal", label: "Вид животного"}, {id: "field", label: "field"}, {id: "field", label: "field"}]
     .container
-        .row
-
+        ul.thumbnails.span12
+            li.thumbnail.span12
+                .row-fluid
+                    .span6
+                        h3.text-center 1. Загрузите фото животного
+                        img(style="height: 400px; width: 100%;")
+                        .caption
+                            form.form-inline.text-right
+                                .input-append
+                                    input(type="text", placeholder="Путь к файлу")
+                                    button(type="button").btn Загрузить
+                    .span6
+                        h3.text-center 2. Укажите где вы его встретили
+                        #map_canvas(style="height: 400px; width: 100%;")
+                        script(src="./googleMap.js")
+                        .caption
+                            form.form-inline
+                                input(type="text", placeholder="Поиск по гео-дате...").input-block-level.input-append
+                    .caption
+                        h3.text-center 3. Напишите, что бы вы хотели нам сказать
+                        textarea.span12(style="height: 70px")
+                        fieldset
+                            button(type="submit").btn.btn-primary.span12 Загрузить

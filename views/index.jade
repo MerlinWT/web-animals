@@ -16,9 +16,10 @@ block Content
                     li.span4
                         div.thumbnail
                             img(src="img/index.png")
-                            .row-fluid
-                                h3.span6 #{pet.name}
-                                    small  #{pet.type}
-                                h3.span6
-                                    button(type="button").btn.btn-primary.span12 Взять друга
-                            p #{pet.info}
+                            .caption
+                                .row-fluid
+                                    h3.span6 #{pet.name}
+                                        small  #{pet.type}
+                                    h3.span6
+                                        button(type="button").btn.btn-primary.span12 Взять друга
+                                p #{pet.info}
