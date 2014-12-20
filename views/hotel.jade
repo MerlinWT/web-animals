@@ -2,5 +2,36 @@ extends ../templ/head
 block Content
     .container
         .row
-            h2 Создание заявки на временное размещение питомца
+            ul.thumbnails.span12
+                li.thumbnail.span12
+                    .row-fluid
+                        .span6
+                            img(style="height: 400px; width: 100%;")
+                        .span6
+                            div(style="height: 400px; width: 100%;")
+                                form.form-horizontal
+                                    .control-group
+                                        label(for="begin-date").control-label С
+                                        .controls
+                                            input#begin-date(type="text").dtp
+                                    .control-group.big-font
+                                        label(for="end-date").control-label По
+                                        .controls
+                                            input#end-date(type="text").dtp
+                                    .control-group
+                                        label(for="valliere").control-label Вальер
+                                        .controls
+                                            select#valliere
+                                                option 1
+                                                option 2
+                                                option 3
+                                                option 4
+                                    .control-group
+                                        label(for="#comment").control-label Комментрарий
+                                        .controls
+                                            textarea#comment(style="height: 70px").span12
+                                    .control-group
+                                        .controls
+                                            button(type="submit").btn.btn-primary.span10 Забронировать
 
+                        .caption
