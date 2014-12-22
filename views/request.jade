@@ -2,6 +2,7 @@ extends ../templ/head
 block Content
     - var form=[{id: "address", label: "Адрес бездомного животного"}, {id: "health", label: "Состояние животного"}, {id: "date", label: "Дата, когда было замечено"}, {id: "animal", label: "Вид животного"}, {id: "field", label: "field"}, {id: "field", label: "field"}]
     .container
+        script(src="./js/googleMap.js")
         ul.thumbnails.span12
             li.thumbnail.span12
                 .row-fluid

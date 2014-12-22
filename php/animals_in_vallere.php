@@ -7,5 +7,5 @@ $db = new SafeMySQL();
 $data = $db->getAll(sql_s_animal_in_vallere);
 $data = json_encode($data);
 
-var_dump($data);
+print($data);
 ?>

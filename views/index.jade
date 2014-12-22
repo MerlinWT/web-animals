@@ -1,6 +1,6 @@
 extends ../templ/head
 block Content
-    - var pets=[{name: "Spike", type: "dog", info: "Милашка"},{name: "Spiker", type: "dog", info: "Озарник"},{name: "Speeke", type: "dog", info: "Попрыгун"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"}]
+    //- var pets=[{name: "Spike", type: "dog", info: "Милашка"},{name: "Spiker", type: "dog", info: "Озарник"},{name: "Speeke", type: "dog", info: "Попрыгун"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"}]
     .container
         .row
             form.form-search.text-center
@@ -11,15 +11,15 @@ block Content
                 strong Warning!
                 span  Best check yo self, you're not looking too good.
         .row
+            script(src="./js/animals_in_vallere.js")
             ul.thumbnails
-                each pet, index in pets
-                    li.span4
-                        div.thumbnail
-                            img(src="img/index.png")
-                            .caption
-                                .row-fluid
-                                    h3.span6 #{pet.name}
-                                        small  #{pet.type}
-                                    h3.span6
-                                        button(type="button").btn.btn-primary.span12 Взять друга
-                                p #{pet.info}
+                li(style="display: ").span4.animal
+                    div.thumbnail
+                        img(src="img/index.png")
+                        .caption
+                            .row-fluid
+                                h3.span6.animal-name
+                                    small.animal-type
+                                h3.span6
+                                    button(type="button").btn.btn-primary.span12 Взять друга
+                            p.animal-info
