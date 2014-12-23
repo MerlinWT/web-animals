@@ -1,7 +1,26 @@
 extends ../templ/head
 block Content
-    //- var pets=[{name: "Spike", type: "dog", info: "Милашка"},{name: "Spiker", type: "dog", info: "Озарник"},{name: "Speeke", type: "dog", info: "Попрыгун"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"}]
+    mixin get-friend-form
+        #get-friend-form.modal.hide.fade
+            script(src="./js/animal_request.js")
+            .modal-header
+                button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+                h3 Заявка
+            .modal-body
+                form.form-horizontal
+                    .control-group
+                        label(for="authLogin").control-label ФИО
+                        .controls
+                            input#authLogin(type="text")
+                    .control-group
+                        label(for="authPass").control-label Контактный телефон
+                        .controls
+                            input#authLogin(type="password")
+            .modal-footer
+                a(href="#").btn.close Закрыть
+                a#animal-request(href="#").btn.btn-primary Отправить
     .container
+        +get-friend-form
         .row
             form.form-search.text-center
                 input(type="text").search-query.input-xxlarge
@@ -21,5 +40,6 @@ block Content
                                 h3.span6.animal-name
                                     small.animal-type
                                 h3.span6
-                                    button(type="button").btn.btn-primary.span12 Взять друга
+                                    a(href="#get-friend-form", data-toggle="modal").btn.btn-primary.span12
+                                        span Взять друга
                             p.animal-info

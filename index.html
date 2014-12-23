@@ -62,6 +62,30 @@
   </body>
 </html>
 <div class="container">
+  <div id="get-friend-form" class="modal hide fade">
+    <script src="./js/animal_request.js"></script>
+    <div class="modal-header">
+      <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+      <h3>Заявка</h3>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label for="authLogin" class="control-label">ФИО</label>
+          <div class="controls">
+            <input id="authLogin" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Контактный телефон</label>
+          <div class="controls">
+            <input id="authLogin" type="password">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer"><a href="#" class="btn close">Закрыть</a><a id="animal-request" href="#" class="btn btn-primary">Отправить</a></div>
+  </div>
   <div class="row">
     <form class="form-search text-center">
       <input type="text" class="search-query input-xxlarge">
@@ -79,9 +103,7 @@
           <div class="caption">
             <div class="row-fluid">
               <h3 class="span6 animal-name"><small class="animal-type"></small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
+              <h3 class="span6"><a href="#get-friend-form" data-toggle="modal" class="btn btn-primary span12"><span>Взять друга</span></a></h3>
             </div>
             <p class="animal-info"></p>
           </div>

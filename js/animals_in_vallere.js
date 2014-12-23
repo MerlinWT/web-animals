@@ -14,6 +14,8 @@
         element = tmpl.clone();
         list = tmpl.parent();
         element.find('.animal-name').html(this.name);
+        element.find('.animal-info').html(this.comment);
+        element.find('img').prop('src', 'php/animal_foto.php?id=' + this.id_animal);
         element.appendTo(list);
         return element.fadeIn(100);
       });
