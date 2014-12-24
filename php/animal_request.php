@@ -14,15 +14,14 @@ INSERT INTO `web-animals`.animal_request(
   VALUES
   (
     NOW() -- request_date - DATETIME NOT NULL
-   ,'' -- first_name - VARCHAR(50) NOT NULL
-   ,'' -- last_name - VARCHAR(50) NOT NULL
-   ,'' -- contact_phone - VARCHAR(9) NOT NULL
-   ,1 -- id_animal - MEDIUMINT(9)
+   ,?s -- first_name - VARCHAR(50) NOT NULL
+   ,?s -- last_name - VARCHAR(50) NOT NULL
+   ,?s -- contact_phone - VARCHAR(9) NOT NULL
+   ,?i -- id_animal - MEDIUMINT(9)
   )
 "
 );
 
-
 $db = new SafeMySQL();
-$data = $db->query(sql_s_animal_in_vallere);
+$data = $db->query(sql_s_animal_in_vallere, $_POST['firstName'], $_POST['lastName'], $_POST['contactPhone'], $_POST['idAnimal']);
 ?>

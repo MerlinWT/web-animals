@@ -70,40 +70,48 @@
     </div>
     <div class="modal-body">
       <form class="form-horizontal">
+        <input id="id-animal" type="text" style="display: none;">
         <div class="control-group">
-          <label for="authLogin" class="control-label">ФИО</label>
+          <label for="authLogin" class="control-label">Фамилия</label>
           <div class="controls">
-            <input id="authLogin" type="text">
+            <input id="first-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Имя</label>
+          <div class="controls">
+            <input id="last-name" type="text">
           </div>
         </div>
         <div class="control-group">
           <label for="authPass" class="control-label">Контактный телефон</label>
           <div class="controls">
-            <input id="authLogin" type="password">
+            <input id="contact-phone" type="text">
           </div>
         </div>
       </form>
     </div>
-    <div class="modal-footer"><a href="#" class="btn close">Закрыть</a><a id="animal-request" href="#" class="btn btn-primary">Отправить</a></div>
+    <div class="modal-footer"><a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Закрыть</a><a id="animal-request" href="#" class="btn btn-primary">Отправить</a></div>
   </div>
   <div class="row">
     <form class="form-search text-center">
-      <input type="text" class="search-query input-xxlarge">
-      <button type="submit" class="btn">Найти друга</button>
+      <input id="seach-input" type="text" class="search-query input-xxlarge">
+      <button id="seach-friend" type="submit" class="btn">Найти друга</button>
     </form>
-    <div class="alert">
-      <button type="button" data-dismiss="alert" class="close">&times;</button><strong>Warning!</strong><span> Best check yo self, you're not looking too good.</span>
+    <div style="display: none;" class="alert">
+      <button type="button" data-dismiss="alert" class="close">&times;</button><strong>Спасибо!</strong><span> Ваша заявка принята. В ближайшее время с вами свяжется нашь специалист.</span>
     </div>
   </div>
   <div class="row">
     <script src="./js/animals_in_vallere.js"></script>
     <ul class="thumbnails">
-      <li style="display: " class="span4 animal">
+      <li style="display: " class="span4 animal tmpl">
+        <input type="text" style="display: none;" class="id-animal">
         <div class="thumbnail"><img src="img/index.png">
           <div class="caption">
             <div class="row-fluid">
               <h3 class="span6 animal-name"><small class="animal-type"></small></h3>
-              <h3 class="span6"><a href="#get-friend-form" data-toggle="modal" class="btn btn-primary span12"><span>Взять друга</span></a></h3>
+              <h3 class="span6"><a href="#" data-toggle="modal" class="btn btn-primary span12 get-friend"><span>Взять друга</span></a></h3>
             </div>
             <p class="animal-info"></p>
           </div>

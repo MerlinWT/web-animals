@@ -8,31 +8,37 @@ block Content
                 h3 Заявка
             .modal-body
                 form.form-horizontal
+                    input#id-animal(type="text", style="display: none;")
                     .control-group
-                        label(for="authLogin").control-label ФИО
+                        label(for="authLogin").control-label Фамилия
                         .controls
-                            input#authLogin(type="text")
+                            input#first-name(type="text")
+                    .control-group
+                        label(for="authPass").control-label Имя
+                        .controls
+                            input#last-name(type="text")
                     .control-group
                         label(for="authPass").control-label Контактный телефон
                         .controls
-                            input#authLogin(type="password")
+                            input#contact-phone(type="text")
             .modal-footer
-                a(href="#").btn.close Закрыть
+                a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
                 a#animal-request(href="#").btn.btn-primary Отправить
     .container
         +get-friend-form
         .row
             form.form-search.text-center
-                input(type="text").search-query.input-xxlarge
-                button(type="submit").btn Найти друга
-            div.alert
+                input#seach-input(type="text").search-query.input-xxlarge
+                button#seach-friend(type="submit").btn Найти друга
+            div(style="display: none;").alert
                 button(type="button", data-dismiss="alert").close &times;
-                strong Warning!
-                span  Best check yo self, you're not looking too good.
+                strong Спасибо!
+                span  Ваша заявка принята. В ближайшее время с вами свяжется нашь специалист.
         .row
             script(src="./js/animals_in_vallere.js")
             ul.thumbnails
-                li(style="display: ").span4.animal
+                li(style="display: ").span4.animal.tmpl
+                    input(type="text", style="display: none;").id-animal
                     div.thumbnail
                         img(src="img/index.png")
                         .caption
@@ -40,6 +46,6 @@ block Content
                                 h3.span6.animal-name
                                     small.animal-type
                                 h3.span6
-                                    a(href="#get-friend-form", data-toggle="modal").btn.btn-primary.span12
+                                    a(href="#", data-toggle="modal").btn.btn-primary.span12.get-friend
                                         span Взять друга
                             p.animal-info
