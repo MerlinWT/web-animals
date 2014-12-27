@@ -66,6 +66,36 @@
 <div class="container">
   <script src="./js/googleMap.js"></script>
   <script src="./js/found_massage.js"></script>
+  <div id="form-message-persone" class="modal hide fade">
+    <div class="modal-header">
+      <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+      <h3>Представтесь, пожалуйста.</h3>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal">
+        <input id="id-animal" type="text" style="display: none;">
+        <div class="control-group">
+          <label for="authLogin" class="control-label">Фамилия</label>
+          <div class="controls">
+            <input id="first-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Имя</label>
+          <div class="controls">
+            <input id="last-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Контактный телефон</label>
+          <div class="controls">
+            <input id="contact-phone" type="text">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer"><a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Закрыть</a><a id="geristrate-message" href="#" class="btn btn-primary">Отправить</a></div>
+  </div>
   <ul class="thumbnails span12">
     <li class="thumbnail span12">
       <div class="row-fluid">
@@ -91,9 +121,9 @@
         </div>
         <div class="caption">
           <h3 class="text-center">3. Напишите, что бы вы хотели нам сказать</h3>
-          <textarea style="height: 70px" class="span12"></textarea>
+          <textarea id="found-comment" style="height: 70px" class="span12"></textarea>
           <fieldset>
-            <button type="submit" class="btn btn-primary span12">Загрузить</button>
+            <button id="message-persone" type="button" class="btn btn-primary span12">Загрузить</button>
           </fieldset>
         </div>
       </div>
