@@ -12,8 +12,10 @@
     <script src="./bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="./js/datetimep.js"></script>
+    <!--script(src="./js/ajaxupload-v1.2.js")-->
   </head>
   <body>
+    <div class="back-image"></div>
     <div id="authForm" class="modal hide fade">
       <div class="modal-header">
         <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
@@ -63,16 +65,17 @@
 </html>
 <div class="container">
   <script src="./js/googleMap.js"></script>
+  <script src="./js/found_massage.js"></script>
   <ul class="thumbnails span12">
     <li class="thumbnail span12">
       <div class="row-fluid">
         <div class="span6">
-          <h3 class="text-center">1. Загрузите фото животного</h3><img style="height: 400px; width: 100%;">
+          <h3 class="text-center">1. Загрузите фото животного</h3><img id="loaded-file" style="height: 400px; width: 100%;">
           <div class="caption">
             <form class="form-inline text-right">
               <div class="input-append">
-                <input type="text" placeholder="Путь к файлу">
-                <button type="button" class="btn">Загрузить</button>
+                <input type="file" placeholder="Путь к файлу">
+                <!--button#select-file(type="button").btn Загрузить-->
               </div>
             </form>
           </div>
