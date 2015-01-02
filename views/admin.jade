@@ -1,0 +1,20 @@
+extends ../templ/head
+block Content
+    .container
+        script(src="./js/admin.js")
+        #admin-interface
+            form.form-horizontal
+                .control-group
+                    label(for="input-user").control-label Логин
+                    .controls
+                        input#input-user(placeholder="Логин", type="text")
+                .control-group
+                    label(for="input-pass").control-label Пароль
+                    .controls
+                        input#input-pass(placeholder="Пароль", type="password")
+                .control-group
+                    .controls
+                        label.checkbox
+                            input#rem(type="checkbox")
+                            span Запомнить меня
+                        button#sign-in(type="button").btn Войти

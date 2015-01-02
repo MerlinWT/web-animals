@@ -65,61 +65,29 @@
   </body>
 </html>
 <div class="container">
-  <div id="get-friend-form" class="modal hide fade">
-    <script src="./js/animal_request.js"></script>
-    <div class="modal-header">
-      <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
-      <h3>Заявка</h3>
-    </div>
-    <div class="modal-body">
-      <form class="form-horizontal">
-        <input id="id-animal" type="text" style="display: none;">
-        <div class="control-group">
-          <label for="authLogin" class="control-label">Фамилия</label>
-          <div class="controls">
-            <input id="first-name" type="text">
-          </div>
+  <script src="./js/admin.js"></script>
+  <div id="admin-interface">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label for="input-user" class="control-label">Логин</label>
+        <div class="controls">
+          <input id="input-user" placeholder="Логин" type="text">
         </div>
-        <div class="control-group">
-          <label for="authPass" class="control-label">Имя</label>
-          <div class="controls">
-            <input id="last-name" type="text">
-          </div>
+      </div>
+      <div class="control-group">
+        <label for="input-pass" class="control-label">Пароль</label>
+        <div class="controls">
+          <input id="input-pass" placeholder="Пароль" type="password">
         </div>
-        <div class="control-group">
-          <label for="authPass" class="control-label">Контактный телефон</label>
-          <div class="controls">
-            <input id="contact-phone" type="text">
-          </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="checkbox">
+            <input id="rem" type="checkbox"><span>Запомнить меня</span>
+          </label>
+          <button id="sign-in" type="button" class="btn">Войти</button>
         </div>
-      </form>
-    </div>
-    <div class="modal-footer"><a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Закрыть</a><a id="animal-request" href="#" class="btn btn-primary">Отправить</a></div>
-  </div>
-  <div class="row">
-    <form class="form-search text-center">
-      <input id="seach-input" type="text" class="search-query input-xxlarge">
-      <button id="seach-friend" type="submit" class="btn">Найти друга</button>
+      </div>
     </form>
-    <div style="display: none;" class="alert">
-      <button type="button" data-dismiss="alert" class="close">&times;</button><strong>Спасибо!</strong><span> Ваша заявка принята. В ближайшее время с вами свяжется нашь специалист.</span>
-    </div>
-  </div>
-  <div class="row">
-    <script src="./js/animals_in_vallere.js"></script>
-    <ul class="thumbnails">
-      <li style="display: " class="span4 animal tmpl">
-        <input type="text" style="display: none;" class="id-animal">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6 animal-name"><small class="animal-type"></small></h3>
-              <h3 class="span6"><a href="#" data-toggle="modal" class="btn btn-primary span12 get-friend"><span>Взять друга</span></a></h3>
-            </div>
-            <p class="animal-info"></p>
-          </div>
-        </div>
-      </li>
-    </ul>
   </div>
 </div>

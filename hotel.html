@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./bootstrap-datepicker/css/datepicker.css">
     <link rel="stylesheet" href="./index.css">
     <script src="./js/jquery-1.11.1.js"></script>
+    <script src="./js/jquery.session.js"></script>
     <script src="./bootstrap/js/bootstrap.js"></script>
     <script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="./bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js"></script>
@@ -64,11 +65,42 @@
   </body>
 </html>
 <div class="container">
+  <script src="./js/get_hotel_vallere.js"></script>
+  <div id="form-hotel-registrate" class="modal hide fade">
+    <div class="modal-header">
+      <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+      <h3>Представтесь, пожалуйста.</h3>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal">
+        <input id="id-animal" type="text" style="display: none;">
+        <div class="control-group">
+          <label for="authLogin" class="control-label">Фамилия</label>
+          <div class="controls">
+            <input id="first-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Имя</label>
+          <div class="controls">
+            <input id="last-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Контактный телефон</label>
+          <div class="controls">
+            <input id="contact-phone" type="text">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer"><a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Закрыть</a><a id="geristrate-hotel" href="#" class="btn btn-primary">Отправить</a></div>
+  </div>
   <div class="row">
     <ul class="thumbnails span12">
       <li class="thumbnail span12">
         <div class="row-fluid">
-          <div class="span6"><img style="height: 400px; width: 100%;"></div>
+          <div class="span6"><img id="vallere-foto" style="height: 400px; width: 100%;"></div>
           <div class="span6">
             <div style="height: 400px; width: 100%;">
               <form class="form-horizontal">
@@ -88,10 +120,10 @@
                   <label for="valliere" class="control-label">Вальер</label>
                   <div class="controls">
                     <select id="valliere">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
                     </select>
                   </div>
                 </div>
@@ -103,7 +135,7 @@
                 </div>
                 <div class="control-group">
                   <div class="controls">
-                    <button type="submit" class="btn btn-primary span10">Забронировать</button>
+                    <button id="show-form-registrate" type="button" class="btn btn-primary span10">Забронировать</button>
                   </div>
                 </div>
               </form>

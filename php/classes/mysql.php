@@ -58,6 +58,7 @@
  * $data = $db->getAll("SELECT * FROM table WHERE ?p", $bar, $sqlpart);
  *
  */
+$date_format = '%e.%m.%Y';
 class SafeMySQL
 {
 	private $conn;
