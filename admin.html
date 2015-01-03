@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?header('Content-Type: text/html; charset=utf-8');?><!DOCTYPE html>
-=======
 <?php header('Content-Type: text/html; charset=utf-8');?><!DOCTYPE html>
->>>>>>> 7c58a704b24a3e8c1ef8117e3f370296af174e03
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,26 +7,16 @@
     <link rel="stylesheet" href="./bootstrap-datepicker/css/datepicker.css">
     <link rel="stylesheet" href="./index.css">
     <script src="./js/jquery-1.11.1.js"></script>
-<<<<<<< HEAD
-=======
     <script src="./js/jquery.session.js"></script>
->>>>>>> 7c58a704b24a3e8c1ef8117e3f370296af174e03
     <script src="./bootstrap/js/bootstrap.js"></script>
     <script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="./bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="./js/datetimep.js"></script>
-<<<<<<< HEAD
-    <script src="./js/googleMap.js"></script>
-    <scritp src="./js/application.js"></scritp>
-  </head>
-  <body>
-=======
     <!--script(src="./js/ajaxupload-v1.2.js")-->
   </head>
   <body>
     <div class="back-image"></div>
->>>>>>> 7c58a704b24a3e8c1ef8117e3f370296af174e03
     <div id="authForm" class="modal hide fade">
       <div class="modal-header">
         <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
@@ -78,3 +64,30 @@
     </div>
   </body>
 </html>
+<div class="container">
+  <script src="./js/admin.js"></script>
+  <div id="admin-interface">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label for="input-user" class="control-label">Логин</label>
+        <div class="controls">
+          <input id="input-user" placeholder="Логин" type="text">
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="input-pass" class="control-label">Пароль</label>
+        <div class="controls">
+          <input id="input-pass" placeholder="Пароль" type="password">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="checkbox">
+            <input id="rem" type="checkbox"><span>Запомнить меня</span>
+          </label>
+          <button id="sign-in" type="button" class="btn">Войти</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

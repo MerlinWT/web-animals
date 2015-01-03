@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?header('Content-Type: text/html; charset=utf-8');?><!DOCTYPE html>
+=======
+<?php header('Content-Type: text/html; charset=utf-8');?><!DOCTYPE html>
+>>>>>>> 7c58a704b24a3e8c1ef8117e3f370296af174e03
 <html>
   <head>
     <meta charset="utf-8">
@@ -7,15 +11,21 @@
     <link rel="stylesheet" href="./bootstrap-datepicker/css/datepicker.css">
     <link rel="stylesheet" href="./index.css">
     <script src="./js/jquery-1.11.1.js"></script>
+    <script src="./js/jquery.session.js"></script>
     <script src="./bootstrap/js/bootstrap.js"></script>
     <script src="./bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="./bootstrap-datepicker/js/locales/bootstrap-datepicker.ru.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="./js/datetimep.js"></script>
+<<<<<<< HEAD
     <script src="./js/googleMap.js"></script>
     <scritp src="./js/application.js"></scritp>
+=======
+    <!--script(src="./js/ajaxupload-v1.2.js")-->
+>>>>>>> 7c58a704b24a3e8c1ef8117e3f370296af174e03
   </head>
   <body>
+    <div class="back-image"></div>
     <div id="authForm" class="modal hide fade">
       <div class="modal-header">
         <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
@@ -64,131 +74,58 @@
   </body>
 </html>
 <div class="container">
+  <div id="get-friend-form" class="modal hide fade">
+    <script src="./js/animal_request.js"></script>
+    <div class="modal-header">
+      <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+      <h3>Заявка</h3>
+    </div>
+    <div class="modal-body">
+      <form class="form-horizontal">
+        <input id="id-animal" type="text" style="display: none;">
+        <div class="control-group">
+          <label for="authLogin" class="control-label">Фамилия</label>
+          <div class="controls">
+            <input id="first-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Имя</label>
+          <div class="controls">
+            <input id="last-name" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="authPass" class="control-label">Контактный телефон</label>
+          <div class="controls">
+            <input id="contact-phone" type="text">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer"><a href="#" data-dismiss="modal" aria-hidden="true" class="btn">Закрыть</a><a id="animal-request" href="#" class="btn btn-primary">Отправить</a></div>
+  </div>
   <div class="row">
     <form class="form-search text-center">
-      <input type="text" class="search-query input-xxlarge">
-      <button type="submit" class="btn">Найти друга</button>
+      <input id="seach-input" type="text" class="search-query input-xxlarge">
+      <button id="seach-friend" type="submit" class="btn">Найти друга</button>
     </form>
-    <div class="alert">
-      <button type="button" data-dismiss="alert" class="close">&times;</button><strong>Warning!</strong><span> Best check yo self, you're not looking too good.</span>
+    <div style="display: none;" class="alert">
+      <button type="button" data-dismiss="alert" class="close">&times;</button><strong>Спасибо!</strong><span> Ваша заявка принята. В ближайшее время с вами свяжется нашь специалист.</span>
     </div>
   </div>
   <div class="row">
+    <script src="./js/animals_in_vallere.js"></script>
     <ul class="thumbnails">
-      <li class="span4">
+      <li style="display: " class="span4 animal tmpl">
+        <input type="text" style="display: none;" class="id-animal">
         <div class="thumbnail"><img src="img/index.png">
           <div class="caption">
             <div class="row-fluid">
-              <h3 class="span6">Spike<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
+              <h3 class="span6 animal-name"><small class="animal-type"></small></h3>
+              <h3 class="span6"><a href="#" data-toggle="modal" class="btn btn-primary span12 get-friend"><span>Взять друга</span></a></h3>
             </div>
-            <p>Милашка</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spiker<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Озарник</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Speeke<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Попрыгун</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spark<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Слюнявчик</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spark<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Слюнявчик</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spark<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Слюнявчик</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spark<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Слюнявчик</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spark<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Слюнявчик</p>
-          </div>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail"><img src="img/index.png">
-          <div class="caption">
-            <div class="row-fluid">
-              <h3 class="span6">Spark<small> dog</small></h3>
-              <h3 class="span6">
-                <button type="button" class="btn btn-primary span12">Взять друга</button>
-              </h3>
-            </div>
-            <p>Слюнявчик</p>
+            <p class="animal-info"></p>
           </div>
         </div>
       </li>

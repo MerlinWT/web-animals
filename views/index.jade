@@ -1,25 +1,51 @@
 extends ../templ/head
 block Content
-    - var pets=[{name: "Spike", type: "dog", info: "Милашка"},{name: "Spiker", type: "dog", info: "Озарник"},{name: "Speeke", type: "dog", info: "Попрыгун"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"},{name: "Spark", type: "dog", info: "Слюнявчик"}]
+    mixin get-friend-form
+        #get-friend-form.modal.hide.fade
+            script(src="./js/animal_request.js")
+            .modal-header
+                button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+                h3 Заявка
+            .modal-body
+                form.form-horizontal
+                    input#id-animal(type="text", style="display: none;")
+                    .control-group
+                        label(for="authLogin").control-label Фамилия
+                        .controls
+                            input#first-name(type="text")
+                    .control-group
+                        label(for="authPass").control-label Имя
+                        .controls
+                            input#last-name(type="text")
+                    .control-group
+                        label(for="authPass").control-label Контактный телефон
+                        .controls
+                            input#contact-phone(type="text")
+            .modal-footer
+                a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
+                a#animal-request(href="#").btn.btn-primary Отправить
     .container
+        +get-friend-form
         .row
             form.form-search.text-center
-                input(type="text").search-query.input-xxlarge
-                button(type="submit").btn Найти друга
-            div.alert
+                input#seach-input(type="text").search-query.input-xxlarge
+                button#seach-friend(type="submit").btn Найти друга
+            div(style="display: none;").alert
                 button(type="button", data-dismiss="alert").close &times;
-                strong Warning!
-                span  Best check yo self, you're not looking too good.
+                strong Спасибо!
+                span  Ваша заявка принята. В ближайшее время с вами свяжется нашь специалист.
         .row
+            script(src="./js/animals_in_vallere.js")
             ul.thumbnails
-                each pet, index in pets
-                    li.span4
-                        div.thumbnail
-                            img(src="img/index.png")
-                            .caption
-                                .row-fluid
-                                    h3.span6 #{pet.name}
-                                        small  #{pet.type}
-                                    h3.span6
-                                        button(type="button").btn.btn-primary.span12 Взять друга
-                                p #{pet.info}
+                li(style="display: ").span4.animal.tmpl
+                    input(type="text", style="display: none;").id-animal
+                    div.thumbnail
+                        img(src="img/index.png")
+                        .caption
+                            .row-fluid
+                                h3.span6.animal-name
+                                    small.animal-type
+                                h3.span6
+                                    a(href="#", data-toggle="modal").btn.btn-primary.span12.get-friend
+                                        span Взять друга
+                            p.animal-info

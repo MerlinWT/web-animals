@@ -1,18 +1,45 @@
 extends ../templ/head
 block Content
     - var form=[{id: "address", label: "Адрес бездомного животного"}, {id: "health", label: "Состояние животного"}, {id: "date", label: "Дата, когда было замечено"}, {id: "animal", label: "Вид животного"}, {id: "field", label: "field"}, {id: "field", label: "field"}]
+    mixin persone-form
+        #form-message-persone.modal.hide.fade
+            .modal-header
+                button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+                h3 Представтесь, пожалуйста.
+            .modal-body
+                form.form-horizontal
+                    input#id-animal(type="text", style="display: none;")
+                    .control-group
+                        label(for="authLogin").control-label Фамилия
+                        .controls
+                            input#first-name(type="text")
+                    .control-group
+                        label(for="authPass").control-label Имя
+                        .controls
+                            input#last-name(type="text")
+                    .control-group
+                        label(for="authPass").control-label Контактный телефон
+                        .controls
+                            input#contact-phone(type="text")
+            .modal-footer
+                a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
+                a#geristrate-message(href="#").btn.btn-primary Отправить
     .container
+        script(src="./js/googleMap.js")
+        script(src="./js/found_massage.js")
+
+        +persone-form
         ul.thumbnails.span12
             li.thumbnail.span12
                 .row-fluid
                     .span6
                         h3.text-center 1. Загрузите фото животного
-                        img(style="height: 400px; width: 100%;")
+                        img#loaded-file(style="height: 400px; width: 100%;")
                         .caption
                             form.form-inline.text-right
                                 .input-append
-                                    input(type="text", placeholder="Путь к файлу")
-                                    button(type="button").btn Загрузить
+                                    input(type="file", placeholder="Путь к файлу")
+                                    //button#select-file(type="button").btn Загрузить
                     .span6
                         h3.text-center 2. Укажите где вы его встретили
                         #map_canvas(style="height: 400px; width: 100%;")
@@ -21,6 +48,6 @@ block Content
                                 input(type="text", placeholder="Поиск по гео-дате...").input-block-level.input-append
                     .caption
                         h3.text-center 3. Напишите, что бы вы хотели нам сказать
-                        textarea.span12(style="height: 70px")
+                        textarea#found-comment(style="height: 70px").span12
                         fieldset
-                            button(type="submit").btn.btn-primary.span12 Загрузить
+                            button#message-persone(type="button").btn.btn-primary.span12 Загрузить
