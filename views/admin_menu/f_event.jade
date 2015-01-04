@@ -1,0 +1,24 @@
+extends ./admin_buttons
+block admin-info
+    script(src='./js/event_edit.js')
+    #item-form.modal.hide.fade
+        .modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+            h3 Событие
+        .modal-body
+            .row-fluid
+                .span6
+                    input#date(type="text", placeholder="Дата события").span12.dtp
+            .row-fluid
+                textarea#text(placeholder="Текст события").span12
+        .modal-footer
+            a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
+            a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
+    .row-fluid
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th #
+                    th Дата
+                    th Текст
+            tbody

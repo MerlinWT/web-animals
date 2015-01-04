@@ -1,0 +1,39 @@
+extends ./admin_buttons
+block admin-info
+    script(src="./js/animal_edit.js")
+    #item-form.modal.hide.fade
+        .modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+            h3 Животное
+        .modal-body
+            .row-fluid
+                .span6
+                    input#name(type="text", placeholder="Имя").span12
+            .row-fluid
+                .span6
+                    select#type.span12
+                        option(disabled="true") Тип
+                .span6
+                    select#vallere-list.span12
+                        option(disabled="true") Вальер
+            .row-fluid
+                textarea#comment(placeholder="Комментарий").span12
+            .row-fluid
+                .span6
+                    input#foto(type="file").span12
+                .span6
+                    img.span12
+        .modal-footer
+            a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
+            a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
+    .row-fluid
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th #
+                    th Имя
+                    th Тип
+                    th Комментарий
+                    th Фото
+                    th Вальер
+            tbody

@@ -4,26 +4,9 @@
     var messageData;
     messageData = {};
     $('input[type="file"]').on('change', function(e) {
-      var data, file;
+      var file;
       file = e.target.files[0];
-      data = new FormData;
-      data.append('file', file);
-      return $.ajax({
-        url: './php/upload.php',
-        type: 'POST',
-        data: data,
-        cache: false,
-        dataType: 'json',
-        processData: false,
-        contentType: false,
-        success: function(data, textStatus, jqXHR) {
-          return $('#loaded-file').prop('src', data.file);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.log('Error !!! %s - %s', textStatus, errorThrown);
-          return console.log(jqXHR.responseText);
-        }
-      });
+      return uploadImage(file, '#loaded-file');
     });
     $('#message-persone').on('click', function() {
       messageData.foundImage = $('#loaded-file').attr('src');

@@ -1,0 +1,32 @@
+extends ./admin_buttons
+block admin-info
+    script(src="./js/vallere_edit.js")
+    #item-form.modal.hide.fade
+        .modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+            h3 Вальер
+        .modal-body
+            .row-fluid
+                .span6
+                    input#label(type="text", placeholder="Метка вальера").span12
+                .span6
+                    select#type.span12
+                        option(disabled="true") Тип вальера
+            .row-fluid
+                .span6
+                    input#foto(type="file").span12
+                .span6
+                    img.span12
+        .modal-footer
+            a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
+            a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
+    .row-fluid
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th #
+                    th Метка
+                    th Тип
+                    th Фото
+                    th Животное
+            tbody

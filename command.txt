@@ -1,0 +1,2 @@
+jade views -o ./ -P -w
+coffee -o ./js -cw coffee

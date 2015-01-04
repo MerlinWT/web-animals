@@ -1,0 +1,33 @@
+extends ./admin_buttons
+block admin-info
+    script(src="./js/hotel_edit.js")
+    #item-form.modal.hide.fade
+        .modal-header
+            button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
+            h3 Размещение
+        .modal-body
+            .row-fluid
+                .span6
+                    input#sd(type="text" placeholder="Дата размещения").span12.dtp
+                .span6
+                    input#ed(type="text" placeholder="Дата конца передержки").span12.dtp
+            .row-fluid
+                .span6
+                    select#vallere-list.span12
+                        option(disabled="true") Вальер
+                .span6
+                    select#animal-list.span12
+                        option(disabled="true") Животное
+        .modal-footer
+                a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
+                a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
+    .row-fluid
+        table.table.table-striped.table-hover
+            thead
+                tr
+                    th #
+                    th Вальер
+                    th Животное
+                    th Дата размещения
+                    th Дата конца передержки
+            tbody
