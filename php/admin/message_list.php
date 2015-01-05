@@ -10,7 +10,9 @@ SELECT  fr.id_found_request as id
        ,fr.phone
        ,fr.date_message
        ,fr.comment
-       ,fr.foto
+       ,CASE WHEN fr.foto IS NULL THEN 'нет'
+                ELSE 1
+           END AS foto
   FROM found_request fr
 "
 );

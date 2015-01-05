@@ -34,7 +34,7 @@ $ ->
       list = do tmpl.parent
       element.find('.animal-name').html @name
       element.find('.animal-info').html @comment
-      element.find('img').prop 'src', 'php/animal_foto.php?id=' + @id_animal
+      element.find('img').prop 'src', "php/foto.php?id=#{@id_animal}&from=animal"
       element.find('.id-animal').val @id_animal
       element.appendTo list
       element.fadeIn 500

@@ -10,5 +10,7 @@ $ ->
         text: do $('#text').val
       success: (res) ->
         console.log res.data
+        #обновление данных
+        admin_data 'event'
       error: (data) ->
         console.log data.responseText

@@ -2,9 +2,12 @@ script(src="./js/admin_buttons.js")
 .row-fluid.text-right
     form.form-inline
         .control-group
-            a#admin-add(href="#item-form", data-toggle="modal").btn.btn-primary
+            button#admin-add(action="add").btn.btn-primary
                 i.icon-plus.icon-white
                 span  Добавить
-            button#admin-edit.btn Изменить
+            button#admin-edit(action="edit").btn
+                i.icon-edit
+                span  Изменить
+            //button#admin-edit.btn Изменить
             button#admin-delete.btn.btn-danger Удалить
 block admin-info

@@ -24,7 +24,6 @@ $data = $db->query(sql_insert, $_POST['label']
                              , $_POST['id_vallere_type']
                              , file_get_contents('../.' . $_POST['foto'])
                   );
-var_dump($_POST);
-$data = array('result' => 'success');
+$data = array('result' => 'success', 'request' => $_POST);
 echo json_encode($data);
 ?>

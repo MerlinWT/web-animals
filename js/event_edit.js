@@ -11,7 +11,8 @@
           text: $('#text').val()
         },
         success: function(res) {
-          return console.log(res.data);
+          console.log(res.data);
+          return admin_data('event');
         },
         error: function(data) {
           return console.log(data.responseText);

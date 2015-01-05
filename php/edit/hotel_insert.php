@@ -27,7 +27,6 @@ $data = $db->query(sql_insert, $_POST['sd']
                              , $_POST['id_animal']
                              , $_POST['id_vallere']
                   );
-var_dump($_POST);
-$data = array('result' => 'success');
+$data = array('result' => 'success', 'request' => $_POST);
 echo json_encode($data);
 ?>

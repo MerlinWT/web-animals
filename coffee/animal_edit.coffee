@@ -36,5 +36,7 @@ $ ->
         foto: $('img').attr 'src'
       success: (res) ->
         console.log res.data
+        #обновление данных
+        admin_data 'animal'
       error: (data) ->
         console.log data.responseText

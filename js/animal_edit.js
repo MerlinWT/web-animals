@@ -37,7 +37,8 @@
           foto: $('img').attr('src')
         },
         success: function(res) {
-          return console.log(res.data);
+          console.log(res.data);
+          return admin_data('animal');
         },
         error: function(data) {
           return console.log(data.responseText);

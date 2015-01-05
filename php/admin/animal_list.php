@@ -7,7 +7,9 @@ SELECT
   ,a.name
   ,at.name type
   ,IFNULL(a.comment,'')
-  ,a.foto
+  ,CASE WHEN a.foto IS NULL THEN 'нет'
+        ELSE 1
+   END AS foto
   ,IFNULL(v.label, '') vallere
   FROM animal a
   JOIN animal_type at ON a.id_animal_type = at.id_animal_type

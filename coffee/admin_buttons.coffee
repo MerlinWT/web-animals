@@ -21,3 +21,7 @@ $ ->
           do $("tr[row-id='#{@}']").remove
       error: (data) ->
         console.log 'err: %s', data.responseText
+  $('#admin-edit, #admin-add').on 'click', (e) ->
+    do e.preventDefault
+    $('#item-form').attr('action', $(@).attr 'action')
+    $('#item-form').modal 'show'

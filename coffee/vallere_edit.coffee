@@ -1,4 +1,15 @@
 $ ->
+  action = 'add'
+  row = null
+  $('#item-form').on 'show', ->
+    action = $('#item-form').attr 'action'
+    #если режим редактирования - загружаем данные на форму
+    if action = 'edit'
+      row = $('input:checked').closest('tr')
+      console.log row
+      $('#label').val do $(row).children().eq(1).html
+      $('#type').val $(row).children().eq(2).attr('id-dic')
+      $('img').attr 'src', $(row).find('a').attr 'href'
   #тип вальера
   dictionary
     data:
@@ -13,15 +24,21 @@ $ ->
     uploadImage file, 'img'
   #Отправка формы на сервер
   $('#add').on 'click', ->
+    urls =
+      add: './php/edit/vallere_insert.php'
+      edit: './php/edit/vallere_update.php'
     $.ajax
       type: 'POST'
-      url: './php/edit/vallere_insert.php'
+      url:  urls[action]
       dataType: 'json'
       data:
+        id: $(row).attr 'row-id'
         label: do $('#label').val
         id_vallere_type: do $('#type').val
         foto: $('img').attr 'src'
       success: (res) ->
         console.log res.data
+        #обновление данных
+        admin_data 'vallere'
       error: (data) ->
         console.log data.responseText

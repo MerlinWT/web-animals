@@ -13,10 +13,7 @@
       data: {
         table: 'vallere',
         id: 'id_vallere',
-        value: 'label',
-        where: {
-          id_vallere_type: 2
-        }
+        value: 'label'
       },
       control: '#vallere-list'
     });
@@ -32,7 +29,8 @@
           id_vallere: $('#vallere-list').val()
         },
         success: function(res) {
-          return console.log(res.data);
+          console.log(res.data);
+          return admin_data('hotel');
         },
         error: function(data) {
           return console.log(data.responseText);

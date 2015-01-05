@@ -4,8 +4,11 @@ require "../classes/mysql.php";
 define("sql_select","
 SELECT v.id_vallere as id
       ,v.label
+      ,vt.id_vallere_type as id_type_name
       ,vt.name as type_name
-      ,v.foto
+      ,CASE WHEN v.foto IS NULL THEN 'нет'
+               ELSE 1
+          END AS foto
       ,IFNULL(a.name,'') as animal
   FROM vallere v
   LEFT JOIN animal_in_vallere aiv ON v.id_vallere = aiv.id_vallere

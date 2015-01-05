@@ -21,7 +21,6 @@ $db = new SafeMySQL();
 $data = $db->query(sql_insert, $_POST['date']
                              , $_POST['text']
                   );
-var_dump($_POST);
-$data = array('result' => 'success');
+$data = array('result' => 'success', 'request' => $_POST);
 echo json_encode($data);
 ?>

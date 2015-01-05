@@ -12,8 +12,8 @@ $ ->
       table: 'vallere'
       id: 'id_vallere'
       value: 'label'
-      where:
-        id_vallere_type: 2
+      #where:
+      #  id_vallere_type: 2
     control: '#vallere-list'
   #Отправка формы на сервер
   $('#add').on 'click', ->
@@ -28,5 +28,7 @@ $ ->
         id_vallere: do $('#vallere-list').val
       success: (res) ->
         console.log res.data
+        #обновление данных
+        admin_data 'hotel'
       error: (data) ->
         console.log data.responseText

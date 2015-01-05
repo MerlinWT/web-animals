@@ -1,21 +1,14 @@
 <?php
 error_reporting(E_ALL);
 require "../classes/mysql.php";
-$action_map_table = array(
-    //action => table_name
-    'vallere' => 'vallere'
-    ,'animal' => 'animal'
-    ,'event' => 'event'
-    ,'message' => 'found_request'
-    ,'hotel' => 'hotel'
-);
+require "../mapping.php";
 
 if (array_key_exists('values', $_POST)){
-
+    $table_name = $action_map_table[$_POST['table']];
     define('sql_delete',
     "
-    DELETE FROM {$action_map_table[$_POST['table']]}
-    WHERE id_{$_POST['table']} IN (?a)
+    DELETE FROM {$table_name}
+    WHERE id_{$table_name} IN (?a)
     "
     );
 
