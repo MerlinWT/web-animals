@@ -2,24 +2,20 @@
 error_reporting(E_ALL);
 require "../classes/mysql.php";
 
-define('sql_insert',
+define('sql_update',
 "
-INSERT INTO `web-animals`.event
-(
- date
- ,text
-)
-VALUES
-(
- IFNULL(STR_TO_DATE(?s, '{$date_format}'), NOW()) -- date - DATETIME NOT NULL
- ,?s  -- text - VARCHAR(1000) NOT NULL
-)
+UPDATE`web-animals`.event
+SET
+ date = STR_TO_DATE(?s, '{$date_format}')
+ ,text = ?s
+WHERE id_event = ?s
 "
 );
 
 $db = new SafeMySQL();
-$data = $db->query(sql_insert, $_POST['date']
+$data = $db->query(sql_update, $_POST['date']
                              , $_POST['text']
+                             , $_POST['id']
                   );
 $data = array('result' => 'success', 'request' => $_POST);
 echo json_encode($data);

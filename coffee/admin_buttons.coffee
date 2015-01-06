@@ -1,4 +1,9 @@
 $ ->
+  $(document).on 'click', 'input[type="checkbox"]', ->
+    count = $('input:checked').length
+    $('#admin-edit').attr 'disabled', count != 1
+    $('#admin-delete').attr 'disabled', count == 0
+
   $('#admin-delete').on 'click', (e) ->
     do e.preventDefault
     action = $('table').attr('action')

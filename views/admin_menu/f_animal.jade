@@ -9,13 +9,9 @@ block admin-info
             .row-fluid
                 .span6
                     input#name(type="text", placeholder="Имя").span12
-            .row-fluid
                 .span6
                     select#type.span12
-                        option(disabled="true") Тип
-                .span6
-                    select#vallere-list.span12
-                        option(disabled="true") Вальер
+                        option(disabled="true", value="-1") Тип
             .row-fluid
                 textarea#comment(placeholder="Комментарий").span12
             .row-fluid
@@ -27,6 +23,7 @@ block admin-info
             a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
             a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
     .row-fluid
+        h1 Список животных
         table.table.table-striped.table-hover
             thead
                 tr

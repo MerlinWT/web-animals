@@ -21,7 +21,7 @@ $ ->
             #console.log '%s %s', key, @["id_#{key}"]
             unless key[0..1] == 'id'
               if key == 'foto' and value == '1'
-                $(row).append($("<td><a href='./php/foto.php?id=#{id}&from=#{action}'>фото</a></td>"))
+                $(row).append($("<td><a target='_blank' href='./php/foto.php?id=#{id}&from=#{action}'>фото</a></td>"))
               else
                 idKey = @["id_#{key}"]
                 idAttr = if idKey? then " id-dic=#{idKey}" else ''

@@ -29,7 +29,7 @@ block Content
         .row
             form.form-search.text-center
                 input#seach-input(type="text").search-query.input-xxlarge
-                button#seach-friend(type="submit").btn Найти друга
+                button#seach-friend(type="button").btn Найти друга
             div(style="display: none;").alert
                 button(type="button", data-dismiss="alert").close &times;
                 strong Спасибо!
@@ -37,7 +37,7 @@ block Content
         .row
             script(src="./js/animals_in_vallere.js")
             ul.thumbnails
-                li(style="display: ").span4.animal.tmpl
+                li(style="display: none").span4.animal.tmpl
                     input(type="text", style="display: none;").id-animal
                     div.thumbnail
                         img(src="img/index.png")

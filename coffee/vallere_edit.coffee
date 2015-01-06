@@ -3,13 +3,22 @@ $ ->
   row = null
   $('#item-form').on 'show', ->
     action = $('#item-form').attr 'action'
+    row = $('input:checked').closest('tr')
     #если режим редактирования - загружаем данные на форму
-    if action = 'edit'
-      row = $('input:checked').closest('tr')
-      console.log row
-      $('#label').val do $(row).children().eq(1).html
-      $('#type').val $(row).children().eq(2).attr('id-dic')
-      $('img').attr 'src', $(row).find('a').attr 'href'
+    values =
+      label:
+        edit: do $(row).children().eq(1).html
+        add: ''
+      type:
+        edit: $(row).children().eq(2).attr('id-dic')
+        add: -1
+      img:
+        edit: $(row).find('a').attr 'href'
+        add: ''
+
+    $('#label').val values.label[action]
+    $('#type').val values.type[action]
+    $('img').attr 'src', values.img[action]
   #тип вальера
   dictionary
     data:

@@ -11,7 +11,7 @@ block admin-info
                     input#label(type="text", placeholder="Метка вальера").span12
                 .span6
                     select#type.span12
-                        option(disabled="true") Тип вальера
+                        option(disabled="true", value="-1") Тип вальера
             .row-fluid
                 .span6
                     input#foto(type="file").span12
@@ -21,6 +21,7 @@ block admin-info
             a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
             a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
     .row-fluid
+        h1  Список вальеров
         table.table.table-striped.table-hover
             thead
                 tr

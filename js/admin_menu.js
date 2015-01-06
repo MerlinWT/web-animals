@@ -25,7 +25,7 @@
                 var idAttr, idKey;
                 if (key.slice(0, 2) !== 'id') {
                   if (key === 'foto' && value === '1') {
-                    return $(row).append($("<td><a href='./php/foto.php?id=" + id + "&from=" + action + "'>фото</a></td>"));
+                    return $(row).append($("<td><a target='_blank' href='./php/foto.php?id=" + id + "&from=" + action + "'>фото</a></td>"));
                   } else {
                     idKey = _this["id_" + key];
                     idAttr = idKey != null ? " id-dic=" + idKey : '';

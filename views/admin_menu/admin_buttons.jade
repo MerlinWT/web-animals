@@ -5,9 +5,9 @@ script(src="./js/admin_buttons.js")
             button#admin-add(action="add").btn.btn-primary
                 i.icon-plus.icon-white
                 span  Добавить
-            button#admin-edit(action="edit").btn
+            button#admin-edit(action="edit", disabled="true").btn
                 i.icon-edit
                 span  Изменить
             //button#admin-edit.btn Изменить
-            button#admin-delete.btn.btn-danger Удалить
+            button#admin-delete(disabled="true").btn.btn-danger Удалить
 block admin-info

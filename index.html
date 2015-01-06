@@ -1,4 +1,4 @@
-<?php header('Content-Type: text/html; charset=utf-8');?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -19,29 +19,6 @@
   </head>
   <body>
     <div class="back-image"></div>
-    <div id="authForm" class="modal hide fade">
-      <div class="modal-header">
-        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
-        <h3>Авторизация</h3>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal">
-          <div class="control-group">
-            <label for="authLogin" class="control-label">Логин</label>
-            <div class="controls">
-              <input id="authLogin" type="text"/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label for="authPass" class="control-label">Пароль</label>
-            <div class="controls">
-              <input id="authLogin" type="password"/>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer"><a href="#" class="btn close">Закрыть</a><a href="#" class="btn btn-primary">Войти</a></div>
-    </div>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container"><a href="index.html" class="brand"><i class="icon-home"></i><span> Главная</span></a>
@@ -50,13 +27,9 @@
             <li><a href="hotel.html"><i class="icon-tags"></i><span> Гостинница</span></a></li>
             <li><a href="diary.html"><i class="icon-calendar"></i><span> Дневник</span></a></li>
           </ul>
-          <ul class="nav pull-right">
-            <li><a href="#authForm" data-toggle="modal"><i class="icon-user"></i><span> Войти</span></a></li>
-          </ul>
         </div>
       </div>
     </div>
-    <!--<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>-->
     <div class="hero-unit">
       <div class="container">
         <div class="row">
@@ -101,7 +74,7 @@
   <div class="row">
     <form class="form-search text-center">
       <input id="seach-input" type="text" class="search-query input-xxlarge">
-      <button id="seach-friend" type="submit" class="btn">Найти друга</button>
+      <button id="seach-friend" type="button" class="btn">Найти друга</button>
     </form>
     <div style="display: none;" class="alert">
       <button type="button" data-dismiss="alert" class="close">&times;</button><strong>Спасибо!</strong><span> Ваша заявка принята. В ближайшее время с вами свяжется нашь специалист.</span>
@@ -110,7 +83,7 @@
   <div class="row">
     <script src="./js/animals_in_vallere.js"></script>
     <ul class="thumbnails">
-      <li style="display: " class="span4 animal tmpl">
+      <li style="display: none" class="span4 animal tmpl">
         <input type="text" style="display: none;" class="id-animal">
         <div class="thumbnail"><img src="img/index.png">
           <div class="caption">

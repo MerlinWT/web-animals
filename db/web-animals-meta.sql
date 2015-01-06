@@ -1,7 +1,7 @@
 ﻿--
 -- Скрипт сгенерирован Devart dbForge Studio for MySQL, Версия 6.3.325.0
 -- Домашняя страница продукта: http://www.devart.com/ru/dbforge/mysql/studio
--- Дата скрипта: 02.01.2015 17:08:22
+-- Дата скрипта: 06.01.2015 16:07:15
 -- Версия сервера: 5.5.25
 -- Версия клиента: 4.1
 --
@@ -28,26 +28,26 @@ CREATE TABLE event (
   PRIMARY KEY (id_event)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 9
 AVG_ROW_LENGTH = 8192
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
 CREATE TABLE found_request (
-  id_found_message mediumint(9) NOT NULL AUTO_INCREMENT,
-  foto blob DEFAULT NULL,
-  latitude varchar(255) NOT NULL,
-  longitude varchar(255) NOT NULL,
+  id_found_request mediumint(9) NOT NULL AUTO_INCREMENT,
+  foto longblob DEFAULT NULL,
+  latitude decimal(10, 3) NOT NULL,
+  longitude decimal(10, 3) NOT NULL,
   first_name varchar(50) NOT NULL,
   last_name varchar(50) NOT NULL,
   phone varchar(10) NOT NULL,
   date_message datetime NOT NULL,
   comment varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (id_found_message)
+  PRIMARY KEY (id_found_request)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 10
-AVG_ROW_LENGTH = 62259
+AUTO_INCREMENT = 12
+AVG_ROW_LENGTH = 53833
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
@@ -72,8 +72,8 @@ CREATE TABLE animal (
   REFERENCES animal_type (id_animal_type) ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 8
-AVG_ROW_LENGTH = 54613
+AUTO_INCREMENT = 13
+AVG_ROW_LENGTH = 178176
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
@@ -87,7 +87,7 @@ CREATE TABLE vallere (
   REFERENCES vallere_type (id_vallere_type) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 9
+AUTO_INCREMENT = 28
 AVG_ROW_LENGTH = 172032
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
@@ -105,8 +105,8 @@ CREATE TABLE animal_in_vallere (
   REFERENCES vallere (id_vallere) ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 5
-AVG_ROW_LENGTH = 4096
+AUTO_INCREMENT = 6
+AVG_ROW_LENGTH = 3276
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
@@ -122,8 +122,8 @@ CREATE TABLE animal_request (
   REFERENCES animal (id_animal) ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 25
-AVG_ROW_LENGTH = 1638
+AUTO_INCREMENT = 27
+AVG_ROW_LENGTH = 1365
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
@@ -141,8 +141,8 @@ CREATE TABLE hotel_registrate (
   REFERENCES vallere (id_vallere) ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 18
-AVG_ROW_LENGTH = 16384
+AUTO_INCREMENT = 19
+AVG_ROW_LENGTH = 8192
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 

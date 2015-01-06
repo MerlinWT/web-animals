@@ -13,8 +13,8 @@ INSERT INTO `web-animals`.animal_in_vallere
 )
 VALUES
 (
-  ?s -- start_date - DATETIME NOT NULL
- ,?s -- end_date - DATETIME
+  STR_TO_DATE(?s, '{$date_format}') -- start_date - DATETIME NOT NULL
+ ,STR_TO_DATE(?s, '{$date_format}') -- end_date - DATETIME
  ,?s -- id_animal - MEDIUMINT(9) NOT NULL
  ,?s -- id_vallere - MEDIUMINT(9) NOT NULL
 )

@@ -5,14 +5,26 @@
     action = 'add';
     row = null;
     $('#item-form').on('show', function() {
+      var values;
       action = $('#item-form').attr('action');
-      if (action = 'edit') {
-        row = $('input:checked').closest('tr');
-        console.log(row);
-        $('#label').val($(row).children().eq(1).html());
-        $('#type').val($(row).children().eq(2).attr('id-dic'));
-        return $('img').attr('src', $(row).find('a').attr('href'));
-      }
+      row = $('input:checked').closest('tr');
+      values = {
+        label: {
+          edit: $(row).children().eq(1).html(),
+          add: ''
+        },
+        type: {
+          edit: $(row).children().eq(2).attr('id-dic'),
+          add: -1
+        },
+        img: {
+          edit: $(row).find('a').attr('href'),
+          add: ''
+        }
+      };
+      $('#label').val(values.label[action]);
+      $('#type').val(values.type[action]);
+      return $('img').attr('src', values.img[action]);
     });
     dictionary({
       data: {

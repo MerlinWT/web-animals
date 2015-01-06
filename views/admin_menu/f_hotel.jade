@@ -14,14 +14,15 @@ block admin-info
             .row-fluid
                 .span6
                     select#vallere-list.span12
-                        option(disabled="true") Вальер
+                        option(disabled="true", value="-1") Вальер
                 .span6
                     select#animal-list.span12
-                        option(disabled="true") Животное
+                        option(disabled="true", value="-1") Животное
         .modal-footer
                 a(href="#", data-dismiss="modal", aria-hidden="true").btn Закрыть
                 a#add(href="#", data-dismiss="modal", aria-hidden="true").btn.btn-primary Сохранить
     .row-fluid
+        h1 Размещение животных в вальерах
         table.table.table-striped.table-hover
             thead
                 tr

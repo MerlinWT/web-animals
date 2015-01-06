@@ -10,8 +10,12 @@ SELECT v.id_vallere as id
                ELSE 1
           END AS foto
       ,IFNULL(a.name,'') as animal
+--      ,aiv.start_date
+--      ,IFNULL(aiv.end_date, SYSDATE())
   FROM vallere v
   LEFT JOIN animal_in_vallere aiv ON v.id_vallere = aiv.id_vallere
+                                 AND aiv.start_date <= SYSDATE()
+                                 AND IFNULL(aiv.end_date, SYSDATE()) >= SYSDATE()
   LEFT JOIN animal a ON aiv.id_animal = a.id_animal
   JOIN vallere_type vt ON v.id_vallere_type = vt.id_vallere_type
 ORDER BY vt.name, v.label

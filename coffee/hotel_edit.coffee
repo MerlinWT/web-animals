@@ -1,4 +1,27 @@
 $ ->
+  action = 'add'
+  row = null
+  $('#item-form').on 'show', ->
+    action = $('#item-form').attr 'action'
+    row = $('input:checked').closest('tr')
+    #если режим редактирования - загружаем данные на форму
+    values =
+      sd:
+        edit: do $(row).children().eq(3).html
+        add: do currentDate
+      ed:
+        edit: do $(row).children().eq(4).html
+        add: do currentDate
+      vallere:
+        edit: $(row).children().eq(1).attr 'id-dic'
+        add: -1
+      animal:
+        edit: $(row).children().eq(2).attr 'id-dic'
+        add: -1
+    $('#sd').val values.sd[action]
+    $('#ed').val values.ed[action]
+    $('#vallere-list').val values.vallere[action]
+    $('#animal-list').val values.animal[action]
   #тип животного
   dictionary
     data:
@@ -17,11 +40,15 @@ $ ->
     control: '#vallere-list'
   #Отправка формы на сервер
   $('#add').on 'click', ->
+    urls =
+      add: './php/edit/hotel_insert.php'
+      edit: './php/edit/hotel_update.php'
     $.ajax
       type: 'POST'
-      url: './php/edit/hotel_insert.php'
+      url: urls[action]
       dataType: 'json'
       data:
+        id: $(row).attr 'row-id'
         sd: do $('#sd').val
         ed: do $('#ed').val
         id_animal: do $('#animal-list').val

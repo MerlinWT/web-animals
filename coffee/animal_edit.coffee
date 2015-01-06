@@ -1,4 +1,28 @@
 $ ->
+  action = 'add'
+  row = null
+  $('#item-form').on 'show', ->
+    action = $('#item-form').attr 'action'
+    row = $('input:checked').closest('tr')
+    #если режим редактирования - загружаем данные на форму
+    values =
+      name:
+        edit: do $(row).children().eq(1).html
+        add: ''
+      type:
+        edit: $(row).children().eq(2).attr('id-dic')
+        add: -1
+      comment:
+        edit: do $(row).children().eq(3).html
+        add: ''
+      img:
+        edit: $(row).find('a').attr 'href'
+        add: ''
+    $('#name').val values.name[action]
+    $('#type').val values.type[action]
+    $('#comment').val values.comment[action]
+
+    $('img').attr 'src', values.img[action]
   ##Справочники
   #тип животного
   dictionary
@@ -7,16 +31,6 @@ $ ->
       id: 'id_animal_type'
       value: 'name'
     control: '#type'
-  #вальер
-  ###dictionary
-    data:
-      table: 'vallere'
-      id: 'id_vallere'
-      value: 'label'
-      where:
-        id_vallere_type: 1
-    control: '#vallere-list'
-    ###
   #загрузка картинки
   $('input[type="file"]').on 'change', (e) ->
     console.log 'image selected'
@@ -24,11 +38,15 @@ $ ->
     uploadImage file, 'img'
   #Отправка формы на сервер
   $('#add').on 'click', ->
+    urls =
+      add: './php/edit/animal_insert.php'
+      edit: './php/edit/animal_update.php'
     $.ajax
       type: 'POST'
-      url: './php/edit/animal_insert.php'
+      url: urls[action]
       dataType: 'json'
       data:
+        id: $(row).attr 'row-id'
         name: do $('#name').val
         id_type: do $('#type').val
         #id_vallere: do $('#vallere-list').val

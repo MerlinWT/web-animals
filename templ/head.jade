@@ -1,25 +1,6 @@
 - var mainName="Задний дворик"
 - var mainMenu={index: ["Главная", "home"], request: ["Оставить заявку", "edit"], hotel: ["Гостинница", "tags"], diary: ["Дневник", "calendar"]}
 - var rightMenu={auth: ["Войти", "user"]}
-mixin authForm
-    #authForm.modal.hide.fade
-        .modal-header
-            button(type="button", data-dismiss="modal", aria-hidden="true").close &times;
-            h3 Авторизация
-        .modal-body
-            form.form-horizontal
-                .control-group
-                    label(for="authLogin").control-label Логин
-                    .controls
-                        input#authLogin(type="text")
-                .control-group
-                    label(for="authPass").control-label Пароль
-                    .controls
-                        input#authLogin(type="password")
-        .modal-footer
-            a(href="#").btn.close Закрыть
-            a(href="#").btn.btn-primary Войти
-<?php header('Content-Type: text/html; charset=utf-8');?>
 doctype html
 html
     head
@@ -41,7 +22,6 @@ html
         //script(src="./js/ajaxupload-v1.2.js")
     body
         div.back-image
-        +authForm
         .navbar.navbar-fixed-top
             .navbar-inner
                 .container
@@ -55,12 +35,6 @@ html
                                     a(href="#{index}.html")
                                         i(class="icon-#{item[1]}")
                                         span  #{item[0]}
-                    ul.nav.pull-right
-                        li
-                            a(href="#authForm", data-toggle="modal")
-                                i(class="icon-#{rightMenu.auth[1]}")
-                                span  #{rightMenu.auth[0]}
-        //<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
         .hero-unit
             .container
                 .row

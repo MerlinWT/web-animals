@@ -4,8 +4,10 @@ require "../classes/mysql.php";
 define("sql_select","
 SELECT
    aiv.id_animal_in_vallere AS id
-  ,v.label
-  ,IFNULL(a.name, 'пусто') AS animel
+  ,v.id_vallere
+  ,v.label as vallere
+  ,IFNULL(a.id_animal, 'пусто') AS id_animal
+  ,IFNULL(a.name, 'пусто') AS animal
   ,IFNULL(aiv.start_date, '') AS SD
   ,IFNULL(aiv.end_date, '') AS ED
   FROM vallere v

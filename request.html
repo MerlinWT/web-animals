@@ -1,4 +1,4 @@
-<?php header('Content-Type: text/html; charset=utf-8');?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -19,29 +19,6 @@
   </head>
   <body>
     <div class="back-image"></div>
-    <div id="authForm" class="modal hide fade">
-      <div class="modal-header">
-        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
-        <h3>Авторизация</h3>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal">
-          <div class="control-group">
-            <label for="authLogin" class="control-label">Логин</label>
-            <div class="controls">
-              <input id="authLogin" type="text"/>
-            </div>
-          </div>
-          <div class="control-group">
-            <label for="authPass" class="control-label">Пароль</label>
-            <div class="controls">
-              <input id="authLogin" type="password"/>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer"><a href="#" class="btn close">Закрыть</a><a href="#" class="btn btn-primary">Войти</a></div>
-    </div>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container"><a href="index.html" class="brand"><i class="icon-home"></i><span> Главная</span></a>
@@ -50,13 +27,9 @@
             <li><a href="hotel.html"><i class="icon-tags"></i><span> Гостинница</span></a></li>
             <li><a href="diary.html"><i class="icon-calendar"></i><span> Дневник</span></a></li>
           </ul>
-          <ul class="nav pull-right">
-            <li><a href="#authForm" data-toggle="modal"><i class="icon-user"></i><span> Войти</span></a></li>
-          </ul>
         </div>
       </div>
     </div>
-    <!--<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>-->
     <div class="hero-unit">
       <div class="container">
         <div class="row">
@@ -116,11 +89,6 @@
         <div class="span6">
           <h3 class="text-center">2. Укажите где вы его встретили</h3>
           <div id="map_canvas" style="height: 400px; width: 100%;"></div>
-          <div class="caption">
-            <form class="form-inline">
-              <input type="text" placeholder="Поиск по гео-дате..." class="input-block-level input-append">
-            </form>
-          </div>
         </div>
         <div class="caption">
           <h3 class="text-center">3. Напишите, что бы вы хотели нам сказать</h3>
