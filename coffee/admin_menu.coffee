@@ -8,7 +8,7 @@ $ ->
       async: false
       dataType: 'json'
       success: (res) ->
-        #console.log res.data
+        console.log res
         table = $('tbody')
         $(table).html ''
         $(table).parent().attr 'action', action

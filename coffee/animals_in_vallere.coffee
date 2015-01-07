@@ -1,4 +1,16 @@
 $ ->
+  findFriend = ->
+    seach_keys = $('#seach-input').val().split ' '
+    $('.animal-info').each ->
+      element = $(@).closest('li.animal')
+      unless element.hasClass 'tmpl'
+        do element.hide
+        seach_text = do $(@).html
+        $.each seach_keys, ->
+          if String(seach_text).indexOf(@) != -1
+            element.fadeIn 300
+
+
   $( document ).on 'click', '.get-friend', (e) ->
     #перадаем идентификатор животного на форму регистрации заявки
     do e.preventDefault
@@ -9,17 +21,8 @@ $ ->
   #$('#get-friend-form').on 'hide', ->
 
 
-  $('#seach-friend').on 'click', ->
-    seach_keys = $('#seach-input').val().split ' '
-    $('.animal-info').each ->
-      #console.log $(@).closest('li.animal')
-      element = $(@).closest('li.animal')
-      unless element.hasClass 'tmpl'
-        do element.hide
-        seach_text = do $(@).html
-        $.each seach_keys, ->
-          if String(seach_text).indexOf(@) != -1
-            element.fadeIn 300
+  $('#seach-input').on 'keyup', ->
+    do findFriend
 
   $.ajax #получам список животных питомника
     type: 'POST'

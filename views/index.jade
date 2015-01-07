@@ -26,10 +26,9 @@ block Content
                 a#animal-request(href="#").btn.btn-primary Отправить
     .container
         +get-friend-form
+        h2.text-center Список животных питомника
         .row
-            form.form-search.text-center
-                input#seach-input(type="text").search-query.input-xxlarge
-                button#seach-friend(type="button").btn Найти друга
+            input#seach-input(type="text", placeholder="Поиск по описанию").input-block-level
             div(style="display: none;").alert
                 button(type="button", data-dismiss="alert").close &times;
                 strong Спасибо!

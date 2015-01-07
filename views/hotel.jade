@@ -27,12 +27,13 @@ block Content
     .container
         script(src="./js/get_hotel_vallere.js")
         +hotel-registrate-form
+        h2.text-center Гостинница
         .row
             ul.thumbnails.span12
                 li.thumbnail.span12
                     .row-fluid
                         .span6
-                            img#vallere-foto(style="height: 400px; width: 100%;")
+                            img#vallere-foto(style="height: 400px; width: 100%;", alt="Свободных вальеров нет")
                         .span6
                             div(style="height: 400px; width: 100%;")
                                 form.form-horizontal

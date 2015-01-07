@@ -1,27 +1,28 @@
 $ ->
   action = 'add'
   row = null
-  $('#item-form').on 'show', ->
-    action = $('#item-form').attr 'action'
-    row = $('input:checked').closest('tr')
-    #если режим редактирования - загружаем данные на форму
-    values =
-      sd:
-        edit: do $(row).children().eq(3).html
-        add: do currentDate
-      ed:
-        edit: do $(row).children().eq(4).html
-        add: do currentDate
-      vallere:
-        edit: $(row).children().eq(1).attr 'id-dic'
-        add: -1
-      animal:
-        edit: $(row).children().eq(2).attr 'id-dic'
-        add: -1
-    $('#sd').val values.sd[action]
-    $('#ed').val values.ed[action]
-    $('#vallere-list').val values.vallere[action]
-    $('#animal-list').val values.animal[action]
+  $('#item-form').on 'show', (e) ->
+    if $(e.target).attr('id') == $(@).attr('id')
+      action = $('#item-form').attr 'action'
+      row = $('input:checked').closest('tr')
+      #если режим редактирования - загружаем данные на форму
+      values =
+        sd:
+          edit: do $(row).children().eq(4).html
+          add: do currentDate
+        ed:
+          edit: do $(row).children().eq(5).html
+          add: do currentDate
+        vallere:
+          edit: $(row).children().eq(1).attr 'id-dic'
+          add: -1
+        animal:
+          edit: $(row).children().eq(3).attr 'id-dic'
+          add: -1
+      $('#sd').val values.sd[action]
+      $('#ed').val values.ed[action]
+      $('#vallere-list').val values.vallere[action]
+      $('#animal-list').val values.animal[action]
   #тип животного
   dictionary
     data:

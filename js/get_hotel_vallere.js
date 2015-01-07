@@ -15,7 +15,7 @@
         dataType: 'json',
         async: true,
         success: function(response) {
-          var option;
+          var idVallere, option, url;
           console.clear();
           console.log(response);
           option = $('<option></option>');
@@ -27,7 +27,16 @@
             $(valere).html(this.label);
             return $('#valliere').append(valere);
           });
-          return $('#vallere-foto').prop('src', './php/vallere/vallere_foto.php?id=' + $('#valliere option:first-child').val());
+          idVallere = $('#valliere option:first-child').val();
+          console.log(idVallere);
+          $('#valliere').attr('disabled', idVallere == null);
+          $('#show-form-registrate').attr('disabled', idVallere == null);
+          if (idVallere != null) {
+            url = './php/vallere/vallere_foto.php?id=' + $('#valliere option:first-child').val();
+          } else {
+            url = './img/hotel_off.png';
+          }
+          return $('#vallere-foto').prop('src', url);
         },
         error: function(data) {
           return console.log(data.responseText);

@@ -1,5 +1,5 @@
 - var mainName="Задний дворик"
-- var mainMenu={index: ["Главная", "home"], request: ["Оставить заявку", "edit"], hotel: ["Гостинница", "tags"], diary: ["Дневник", "calendar"]}
+- var mainMenu={index: ["Главная", "home"], request: ["Оставить заявку", "edit"], hotel: ["Гостинница", "tags"], diary: ["Дневник", "calendar"], admin: ["Администрирование", "user"]}
 - var rightMenu={auth: ["Войти", "user"]}
 doctype html
 html
@@ -35,8 +35,11 @@ html
                                     a(href="#{index}.html")
                                         i(class="icon-#{item[1]}")
                                         span  #{item[0]}
-        .hero-unit
+        .hero-unit.animal-hero
             .container
                 .row
-                    h1.span6  #{mainName}
+
+                    h1
+                        img(src="./img/logo10.png")
+                        span #{mainName}
 block Content

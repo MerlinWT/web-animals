@@ -21,9 +21,7 @@ $ ->
         values: str_values
       success: (res) ->
         console.log res
-        $.each str_values, ->
-          console.log @
-          do $("tr[row-id='#{@}']").remove
+        admin_data action
       error: (data) ->
         console.log 'err: %s', data.responseText
   $('#admin-edit, #admin-add').on 'click', (e) ->

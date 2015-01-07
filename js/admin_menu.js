@@ -12,6 +12,7 @@
         dataType: 'json',
         success: function(res) {
           var table;
+          console.log(res);
           table = $('tbody');
           $(table).html('');
           $(table).parent().attr('action', action);

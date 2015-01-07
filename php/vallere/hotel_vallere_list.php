@@ -9,10 +9,10 @@ SELECT v.id_vallere
   LEFT JOIN hotel_registrate hr ON v.id_vallere = hr.id_vallere
   WHERE v.id_vallere_type = 2
     AND (aiv.id_animal IS NULL
-         OR (aiv.start_date >= STR_TO_DATE(?s, '{$date_format}') OR aiv.end_date <= STR_TO_DATE(?s, '{$date_format}'))
+         OR (aiv.start_date > STR_TO_DATE(?s, '{$date_format}') OR aiv.end_date < STR_TO_DATE(?s, '{$date_format}'))
     )
     AND (hr.id_hotel_registrate IS NULL
-         OR (hr.wish_start_date >= STR_TO_DATE(?s, '{$date_format}') OR hr.wish_end_date <= STR_TO_DATE(?s, '{$date_format}'))
+         OR (hr.wish_start_date > STR_TO_DATE(?s, '{$date_format}') OR hr.wish_end_date < STR_TO_DATE(?s, '{$date_format}'))
     )
 "
 );

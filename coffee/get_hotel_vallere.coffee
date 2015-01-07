@@ -23,7 +23,16 @@ $ ->
           $(valere).html @.label
           $('#valliere').append valere
         #первый вальер в списке по умолчанию
-        $('#vallere-foto').prop 'src', './php/vallere/vallere_foto.php?id=' + $('#valliere option:first-child').val()
+        idVallere = $('#valliere option:first-child').val()
+        console.log idVallere
+        $('#valliere').attr 'disabled', !idVallere?
+        $('#show-form-registrate').attr 'disabled', !idVallere?
+        if idVallere?
+          url = './php/vallere/vallere_foto.php?id=' + $('#valliere option:first-child').val()
+        else
+          url = './img/hotel_off.png'
+
+        $('#vallere-foto').prop 'src', url
       error: (data) ->
         console.log data.responseText
 

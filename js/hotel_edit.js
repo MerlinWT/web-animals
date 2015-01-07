@@ -4,32 +4,34 @@
     var action, row;
     action = 'add';
     row = null;
-    $('#item-form').on('show', function() {
+    $('#item-form').on('show', function(e) {
       var values;
-      action = $('#item-form').attr('action');
-      row = $('input:checked').closest('tr');
-      values = {
-        sd: {
-          edit: $(row).children().eq(3).html(),
-          add: currentDate()
-        },
-        ed: {
-          edit: $(row).children().eq(4).html(),
-          add: currentDate()
-        },
-        vallere: {
-          edit: $(row).children().eq(1).attr('id-dic'),
-          add: -1
-        },
-        animal: {
-          edit: $(row).children().eq(2).attr('id-dic'),
-          add: -1
-        }
-      };
-      $('#sd').val(values.sd[action]);
-      $('#ed').val(values.ed[action]);
-      $('#vallere-list').val(values.vallere[action]);
-      return $('#animal-list').val(values.animal[action]);
+      if ($(e.target).attr('id') === $(this).attr('id')) {
+        action = $('#item-form').attr('action');
+        row = $('input:checked').closest('tr');
+        values = {
+          sd: {
+            edit: $(row).children().eq(4).html(),
+            add: currentDate()
+          },
+          ed: {
+            edit: $(row).children().eq(5).html(),
+            add: currentDate()
+          },
+          vallere: {
+            edit: $(row).children().eq(1).attr('id-dic'),
+            add: -1
+          },
+          animal: {
+            edit: $(row).children().eq(3).attr('id-dic'),
+            add: -1
+          }
+        };
+        $('#sd').val(values.sd[action]);
+        $('#ed').val(values.ed[action]);
+        $('#vallere-list').val(values.vallere[action]);
+        return $('#animal-list').val(values.animal[action]);
+      }
     });
     dictionary({
       data: {

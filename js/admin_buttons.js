@@ -25,10 +25,7 @@
         },
         success: function(res) {
           console.log(res);
-          return $.each(str_values, function() {
-            console.log(this);
-            return $("tr[row-id='" + this + "']").remove();
-          });
+          return admin_data(action);
         },
         error: function(data) {
           return console.log('err: %s', data.responseText);
