@@ -18,7 +18,7 @@ $ ->
 
     $('#label').val values.label[action]
     $('#type').val values.type[action]
-    $('img').attr 'src', values.img[action]
+    $('img.foto').attr 'src', values.img[action]
   #тип вальера
   dictionary
     data:
@@ -30,7 +30,7 @@ $ ->
   $('input[type="file"]').on 'change', (e) ->
     console.log 'image selected'
     file = e.target.files[0]
-    uploadImage file, 'img'
+    uploadImage file, 'img.foto'
   #Отправка формы на сервер
   $('#add').on 'click', ->
     urls =
@@ -44,7 +44,7 @@ $ ->
         id: $(row).attr 'row-id'
         label: do $('#label').val
         id_vallere_type: do $('#type').val
-        foto: $('img').attr 'src'
+        foto: $('img.foto').attr 'src'
       success: (res) ->
         console.log res.data
         #обновление данных

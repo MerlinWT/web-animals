@@ -29,7 +29,7 @@
       $('#name').val(values.name[action]);
       $('#type').val(values.type[action]);
       $('#comment').val(values.comment[action]);
-      return $('img').attr('src', values.img[action]);
+      return $('img.foto').attr('src', values.img[action]);
     });
     dictionary({
       data: {
@@ -43,7 +43,7 @@
       var file;
       console.log('image selected');
       file = e.target.files[0];
-      return uploadImage(file, 'img');
+      return uploadImage(file, 'img.foto');
     });
     return $('#add').on('click', function() {
       var urls;
@@ -60,7 +60,7 @@
           name: $('#name').val(),
           id_type: $('#type').val(),
           comment: $('#comment').val(),
-          foto: $('img').attr('src')
+          foto: $('img.foto').attr('src')
         },
         success: function(res) {
           console.log(res.data);

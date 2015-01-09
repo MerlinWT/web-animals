@@ -22,7 +22,7 @@ $ ->
     $('#type').val values.type[action]
     $('#comment').val values.comment[action]
 
-    $('img').attr 'src', values.img[action]
+    $('img.foto').attr 'src', values.img[action]
   ##Справочники
   #тип животного
   dictionary
@@ -35,7 +35,7 @@ $ ->
   $('input[type="file"]').on 'change', (e) ->
     console.log 'image selected'
     file = e.target.files[0]
-    uploadImage file, 'img'
+    uploadImage file, 'img.foto'
   #Отправка формы на сервер
   $('#add').on 'click', ->
     urls =
@@ -51,7 +51,7 @@ $ ->
         id_type: do $('#type').val
         #id_vallere: do $('#vallere-list').val
         comment: do $('#comment').val
-        foto: $('img').attr 'src'
+        foto: $('img.foto').attr 'src'
       success: (res) ->
         console.log res.data
         #обновление данных
