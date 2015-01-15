@@ -12,20 +12,21 @@
   <Settings>
     <DbDiagramOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <EnableComments>false</EnableComments>
+      <PreserveRouting>false</PreserveRouting>
       <CustomProperties />
     </DbDiagramOptions>
     <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PageOptions">
       <TopLeftMargins>
-        <Width>10 mm</Width>
-        <Height>10 mm</Height>
+        <Width>39.3700787401575 in/100</Width>
+        <Height>39.3700787401575 in/100</Height>
       </TopLeftMargins>
       <BottomRightMargins>
-        <Width>10 mm</Width>
-        <Height>10 mm</Height>
+        <Width>39.3700787401575 in/100</Width>
+        <Height>39.3700787401575 in/100</Height>
       </BottomRightMargins>
       <PaperSize>
-        <Width>210 mm</Width>
-        <Height>297 mm</Height>
+        <Width>827 in/100</Width>
+        <Height>1169 in/100</Height>
       </PaperSize>
     </Options>
     <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PrintOptions" />
@@ -53,20 +54,20 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>886 px</X>
-              <Y>49 px</Y>
+              <X>640 px</X>
+              <Y>510 px</Y>
             </Location>
             <Size>
               <Width>218 px</Width>
-              <Height>144 px</Height>
+              <Height>216 px</Height>
             </Size>
             <DbOid>
               <Path>`web-animals`.animal</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>False</IndexesCollapsed>
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
@@ -76,8 +77,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>577 px</X>
-              <Y>40 px</Y>
+              <X>620 px</X>
+              <Y>292.105263233185 px</Y>
             </Location>
             <Size>
               <Width>250 px</Width>
@@ -105,11 +106,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>250.4 px</X>
-                  <Y>80.6 px</Y>
+                  <X>129 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>4</OID>
                   <PortType>FloatAnchor</PortType>
@@ -117,11 +118,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0.299999999999955 px</X>
-                  <Y>71.6 px</Y>
+                  <X>109 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>5</OID>
                   <PortType>FloatAnchor</PortType>
@@ -140,28 +141,28 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>1162 px</X>
-              <Y>59 px</Y>
+              <X>340 px</X>
+              <Y>500 px</Y>
             </Location>
             <Size>
-              <Width>218 px</Width>
-              <Height>124 px</Height>
+              <Width>237 px</Width>
+              <Height>233 px</Height>
             </Size>
             <DbOid>
-              <Path>`web-animals`.animal_type</Path>
+              <Path>`web-animals`.animal_request</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>False</IndexesCollapsed>
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
               <OID>7</OID>
-              <OutModel>1</OutModel>
-              <InModel>6</InModel>
+              <OutModel>6</OutModel>
+              <InModel>1</InModel>
               <OutPort>8</OutPort>
               <InPort>9</InPort>
               <Parent>0</Parent>
@@ -169,8 +170,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>217.3 px</X>
-                  <Y>71.6 px</Y>
+                  <X>0 px</X>
+                  <Y>118 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -181,13 +182,77 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0.200000000000045 px</X>
-                  <Y>61.6 px</Y>
+                  <X>0 px</X>
+                  <Y>108 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
                   <OID>9</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`web-animals`.animal_request.FK_animal_request_animal_id_animal</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>10</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>620 px</X>
+              <Y>770 px</Y>
+            </Location>
+            <Size>
+              <Width>218 px</Width>
+              <Height>162 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`web-animals`.animal_type</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>False</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>11</OID>
+              <OutModel>1</OutModel>
+              <InModel>10</InModel>
+              <OutPort>12</OutPort>
+              <InPort>13</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>99 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>12</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>119 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>13</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
@@ -200,16 +265,85 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>10</OID>
+              <OID>14</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>300 px</X>
-              <Y>57 px</Y>
+              <X>360 px</X>
+              <Y>790 px</Y>
+            </Location>
+            <Size>
+              <Width>178 px</Width>
+              <Height>129 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`web-animals`.event</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>15</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>19.9999999999999 px</X>
+              <Y>540 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>231 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`web-animals`.found_request</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>16</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>310 px</X>
+              <Y>-20 px</Y>
+            </Location>
+            <Size>
+              <Width>239 px</Width>
+              <Height>267 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`web-animals`.hotel_registrate</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>False</ConstraintsCollapsed>
+              <IndexesCollapsed>False</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>17</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>330 px</X>
+              <Y>300 px</Y>
             </Location>
             <Size>
               <Width>218 px</Width>
-              <Height>127 px</Height>
+              <Height>144 px</Height>
             </Size>
             <DbOid>
               <Path>`web-animals`.vallere</Path>
@@ -223,35 +357,35 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>11</OID>
+              <OID>18</OID>
               <OutModel>2</OutModel>
-              <InModel>10</InModel>
-              <OutPort>12</OutPort>
-              <InPort>13</InPort>
+              <InModel>17</InModel>
+              <OutPort>19</OutPort>
+              <InPort>20</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-0.700000000000045 px</X>
-                  <Y>80.6 px</Y>
+                  <X>0 px</X>
+                  <Y>79.8947448730469 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>12</OID>
+                  <OID>19</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>217.4 px</X>
-                  <Y>63.6 px</Y>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>13</OID>
+                  <OID>20</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
@@ -262,17 +396,58 @@
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>21</OID>
+              <OutModel>16</OutModel>
+              <InModel>17</InModel>
+              <OutPort>22</OutPort>
+              <InPort>23</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>129 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>22</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>109 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>23</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`web-animals`.hotel_registrate.FK_hotel_registrate_vallere_id_vallere</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>14</OID>
+              <OID>24</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>40 px</X>
-              <Y>58 px</Y>
+              <X>60 px</X>
+              <Y>320 px</Y>
             </Location>
             <Size>
-              <Width>202 px</Width>
+              <Width>218 px</Width>
               <Height>126 px</Height>
             </Size>
             <DbOid>
@@ -285,55 +460,37 @@
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
-          <Model xsi:type="ViewModel">
-            <CustomProperties>
-              <OID>15</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>1430 px</X>
-              <Y>40 px</Y>
-            </Location>
-            <Size>
-              <Width>178 px</Width>
-              <Height>106 px</Height>
-            </Size>
-            <DbOid>
-              <Path>`web-animals`.v_curent_animals</Path>
-              <TypeName>View</TypeName>
-            </DbOid>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>16</OID>
-              <OutModel>10</OutModel>
-              <InModel>14</InModel>
-              <OutPort>17</OutPort>
-              <InPort>18</InPort>
+              <OID>25</OID>
+              <OutModel>17</OutModel>
+              <InModel>24</InModel>
+              <OutPort>26</OutPort>
+              <InPort>27</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0.399999999999977 px</X>
-                  <Y>63.6 px</Y>
+                  <X>0 px</X>
+                  <Y>82 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>17</OID>
+                  <OID>26</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>201.5 px</X>
-                  <Y>62.6 px</Y>
+                  <X>0 px</X>
+                  <Y>62 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>18</OID>
+                  <OID>27</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
@@ -347,10 +504,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.87</Scale>
+          <Scale>0.83</Scale>
           <Location>
-            <X>13.7931033340277 px</X>
-            <Y>-201.149424184879 px</Y>
+            <X>-150.602412666806 px</X>
+            <Y>-196.385546767049 px</Y>
           </Location>
         </ViewPort>
       </Model>
